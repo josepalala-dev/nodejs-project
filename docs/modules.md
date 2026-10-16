@@ -13,7 +13,7 @@ Synthesized from each module's `brief.md`. Each row is one lab task (from the "Y
 | M01 | Deliberately create and resolve a merge conflict | A resolved merge conflict in the PR history | Skipped |
 | M01 | Merge the PR (3+ Conventional Commits) | A merged pull request | Skipped |
 | M02 | Research language essentials and async concepts | Notes/understanding to support the build | Done |
-| M02 | Build `sleep`, `retry`, `withTimeout`, `mapLimit` with self-checks | "Async toolkit" ES module with passing `node:assert` self-checks | Not Started |
+| M02 | Build `sleep`, `retry`, `withTimeout`, `mapLimit` with self-checks | "Async toolkit" ES module with passing `node:assert` self-checks | Done |
 | M02 | Fetch from JSONPlaceholder sequentially then in parallel, compare timings | Timing comparison with actual numbers showing parallel beats sequential | Not Started |
 | M02 | Refactor callback-style `node:fs` code to promises/async-await | Refactored async/await code | Not Started |
 | M02 | Predict/explain output order of a mixed `setTimeout`/promise/`await` snippet | Verbal/written explanation of execution order | Not Started |
