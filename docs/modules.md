@@ -12,7 +12,7 @@ Synthesized from each module's `brief.md`. Each row is one lab task (from the "Y
 | M01 | Open a pull request for the branch | An open pull request | Skipped |
 | M01 | Deliberately create and resolve a merge conflict | A resolved merge conflict in the PR history | Skipped |
 | M01 | Merge the PR (3+ Conventional Commits) | A merged pull request | Skipped |
-| M02 | Research language essentials and async concepts | Notes/understanding to support the build | Not Started |
+| M02 | Research language essentials and async concepts | Notes/understanding to support the build | Done |
 | M02 | Build `sleep`, `retry`, `withTimeout`, `mapLimit` with self-checks | "Async toolkit" ES module with passing `node:assert` self-checks | Not Started |
 | M02 | Fetch from JSONPlaceholder sequentially then in parallel, compare timings | Timing comparison with actual numbers showing parallel beats sequential | Not Started |
 | M02 | Refactor callback-style `node:fs` code to promises/async-await | Refactored async/await code | Not Started |
@@ -53,4 +53,5 @@ Synthesized from each module's `brief.md`. Each row is one lab task (from the "Y
 | M09 | Write tests for pagination/filter/sort and middleware behavior | Additional integration tests | Not Started |
 | M09 | Add `PATCH /tasks/:id/complete` test-first (red → green → refactor) | New endpoint built via TDD | Not Started |
 | M09 | Set up GitHub Actions workflow and confirm green CI | Passing CI workflow with status badge — Task API v4 | Not Started |
-</content>
+
+M02 - Research done (see docs)
