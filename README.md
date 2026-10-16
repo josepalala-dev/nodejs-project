@@ -2,7 +2,68 @@
 
 This NodeJS Project is a capstone project to apply the lessons from the NodeJS Training modules. It features high-performance, developer-focused task and project tracking RESTful backend service built with Node.js, Express, TypeScript, SQLite, Prisma, Zod, and Jest.
 
+DevPulse is a lightweight Express.js and TypeScript REST API designed to manage developer tasks while serving as an asynchronous job-processing engine. It demonstrates core Node.js concepts—queuing, concurrency control, automated retries, and non-blocking delays—within a practical application context.
+
 This repository tracks progress through a structured 10-stage engineering curriculum, starting from core Node.js runtime fundamentals to database migrations, runtime schema validation, integration testing, and a final M10 production capstone deployment.
+
+The following discusses what the techstack, core features, REST endpoints, learning progress and track the lessons learned (in each docs folder, there will be a writeup) and what each module might be able to do. 
+
+**Tech Stack:** Node.js | Express.js | TypeScript | SQLite | REST API
+
+---
+
+
+
+---
+
+## Core Features
+
+| Feature | Description |
+| --- | --- |
+| **Task Management** | CRUD operations for tasks (title, description, priority, project, due date). |
+| **Status & Priority Tracking** | Track status (`TODO`, `IN_PROGRESS`, `DONE`) and priority (`LOW`, `MEDIUM`, `HIGH`). |
+| **Project Association** | Group and filter tasks by specific software projects. |
+| **Task Queue** | Queue task-related jobs for asynchronous execution. |
+| **Concurrency Control** | Enforce limits on simultaneous job execution (e.g., via `mapLimit`). |
+| **Retry Mechanism** | Auto-retry failed processing jobs with configurable retry limits and delays. |
+| **Non-Blocking Delays** | Simulate processing latency and backoff intervals using `sleep(ms)`. |
+
+---
+
+## REST API Endpoints
+
+| Method | Endpoint | Purpose |
+| --- | --- | --- |
+| `GET` | `/api/tasks` | Retrieve all tasks |
+| `GET` | `/api/tasks/:id` | Retrieve a specific task by ID |
+| `POST` | `/api/tasks` | Create a new task |
+| `PATCH` | `/api/tasks/:id` | Update task details or status |
+| `DELETE` | `/api/tasks/:id` | Delete a task |
+| `GET` | `/api/projects/:id/tasks` | Fetch tasks belonging to a specific project |
+| `POST` | `/api/tasks/:id/process` | Enqueue a task for background processing |
+| `GET` | `/api/jobs/:id` | Check background job processing status |
+
+---
+
+## Processing Workflow
+
+When processing jobs are triggered, the engine executes the following pipeline:
+
+1. **Enqueue:** Incoming jobs enter an in-memory queue, decoupled from direct task status changes.
+2. **Concurrency Control:** Limits concurrent execution (e.g., maximum of 3 active jobs).
+3. **Execution Delay:** Uses asynchronous `sleep(ms)` calls to simulate network/API latency.
+4. **Retry Loop:** Retries failed jobs up to 3 times before marking them as failed.
+5. **State Recording:** Records final execution results for API status queries.
+
+---
+
+## Key Thesis Objectives
+
+* **RESTful Design:** Build a structured Express.js + TypeScript API.
+* **Async Mastery:** Demonstrate non-blocking operations using Promises and `async/await`.
+* **Reliability Patterns:** Implement concurrency control, queueing, and error-recovery retries.
+* **Pragmatic Scope:** Maintain simplicity using SQLite for persistence and an in-memory queue, avoiding external infrastructure dependencies like Redis or RabbitMQ.
+
 
 ##  System Architecture
 
